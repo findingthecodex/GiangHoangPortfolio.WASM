@@ -1,16 +1,45 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu/>
-    </div>
+@using MudBlazor
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+
+    <MudAppBar Color="Color.Transparent" Elevation="0">
+
+        <MudText Typo="Typo.h6">GiangHoang.dev</MudText>
+
+        <MudSpacer />
+
+        <div style="display: flex; justify-content: center; flex: 10; gap: 12px;">
+            <MudButton Href="/" Color="Color.Inherit">Om mig</MudButton>
+            <MudButton Href="/underconstruction" Color="Color.Inherit">Min resa</MudButton>
+            <MudButton Href="/underconstruction" Color="Color.Inherit">Projekt</MudButton>
+            <MudButton Href="/youtube" Color="Color.Inherit">Youtube</MudButton>
+            <MudButton Href="/cv" Color="Color.Inherit">CV</MudButton>
+            <MudButton Href="/underconstruction" Color="Color.Inherit">Kontakt</MudButton>
         </div>
 
-        <article class="content px-4">
+        <MudSpacer />
+
+    </MudAppBar>
+
+    <div class="hero-layout">
+
+        <!-- Vänstersida: alltid synlig -->
+        <div class="profile-column">
+            <div class="profile-card">
+                <img src="/images/IMG_92352.jpg" alt="Giang Hoang" />
+            </div>
+        </div>
+
+        <!-- Mitten: byts per sida -->
+        <div class="hero-content">
             @Body
-        </article>
-    </main>
-</div>
+        </div>
+
+    </div>
+
+</MudLayout>

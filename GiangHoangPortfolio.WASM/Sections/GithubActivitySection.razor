@@ -1,0 +1,52 @@
+
+<MudCard Class="github-heatmap-card">
+
+    <div class="heatmap-header">
+        <MudText Typo="Typo.h6">⚡ KODAKTIVITET</MudText>
+        <span class="heatmap-badge">159 bidrag</span>
+    </div>
+
+    <div class="heatmap-grid-wrapper">
+
+        <div class="weekday-labels">
+            <span>S</span>
+            <span>M</span>
+            <span>T</span>
+            <span>O</span>
+            <span>T</span>
+            <span>F</span>
+            <span>L</span>
+        </div>
+
+        <div class="heatmap-content">
+
+            @foreach (var month in months)
+            {
+                <div class="month-column">
+                    <span class="month-label">@month</span>
+
+                    @for (int i = 0; i < 7; i++)
+                    {
+                        <div class="heatmap-cell level-@random.Next(1, 4)"></div>
+                    }
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+    <div class="heatmap-legend">
+        <span>LESS</span>
+        <div class="heatmap-cell level-1"></div>
+        <div class="heatmap-cell level-2"></div>
+        <div class="heatmap-cell level-3"></div>
+        <span>MORE</span>
+    </div>
+
+</MudCard>
+
+@code {
+    string[] months = { "JUL", "AUG", "SEP", "OKT", "NOV", "DEC", "JAN" };
+    Random random = new();
+}
