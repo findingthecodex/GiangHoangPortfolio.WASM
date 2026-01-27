@@ -1,0 +1,42 @@
+@page "/projects"
+
+<MudCard Elevation="6" Class="project-card dark-card">
+
+    <MudCardContent>
+
+        <MudText Typo="Typo.h4" Class="quiz-title mb-4">
+            🧠 Quiz Game
+        </MudText>
+
+        <MudText Typo="Typo.subtitle1" Class="mb-4">
+            Jag har byggt ett helt eget Quiz Game med Blazor WebAssembly och MudBlazor – från idé till färdig, publicerad webapp.
+            Projektet visar min förmåga att bygga interaktiva gränssnitt, hantera logik och deploya moderna .NET-applikationer.
+        </MudText>
+
+        <!-- Embed container -->
+        <div class="embed-container glow-frame">
+
+            <iframe
+                src="https://findingthecodex.github.io/QuizGame.WASM/"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </MudCardContent>
+
+    <MudCardActions>
+
+        <MudButton
+            Variant="Variant.Outlined"
+            Color="Color.Primary"
+            Href="https://findingthecodex.github.io/QuizGame.WASM/"
+            Target="_blank">
+
+            Öppna i ny flik
+        </MudButton>
+
+    </MudCardActions>
+
+</MudCard>

@@ -597,3 +597,71 @@ body {
 .mud-button:hover {
     background: rgba(56,189,248,0.15) !important;
 }
+
+/* Project page */
+.embed-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    margin-bottom: 1rem;
+}
+
+.embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.dark-card {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+/* Quiz Embed – Same Glow as YouTube */
+
+.embed-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+
+    /* YouTube-style border */
+    border: 2px solid rgba(56, 189, 248, 0.6);
+
+    /* YouTube-style glow */
+    box-shadow:
+            0 0 60px rgba(56, 189, 248, 0.35),
+            0 0 20px rgba(56, 189, 248, 0.2);
+
+    background: #000;
+}
+
+.embed-container iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.quiz-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    color: white;
+
+    margin-bottom: 0.5rem;
+
+    text-align: center;
+
+    text-shadow:
+            0 0 6px rgba(56, 189, 248, 0.6),
+            0 0 12px rgba(56, 189, 248, 0.3);
+}
