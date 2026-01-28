@@ -1,0 +1,101 @@
+<div class="journey-card @TypeClass">
+
+    <!-- HEADER -->
+    <div class="journey-header">
+
+        <span class="journey-date">@Date</span>
+
+        <span class="journey-status @StatusClass">
+            @Status
+        </span>
+
+        @if (!string.IsNullOrWhiteSpace(Score))
+        {
+            <span class="journey-score">@Score</span>
+        }
+
+        <!-- Spacer -->
+        <div class="journey-spacer"></div>
+
+        <!-- Toggle -->
+        @if (!string.IsNullOrWhiteSpace(Description))
+        {
+            <button class="journey-toggle"
+                    @onclick="Toggle">
+
+                <span class="arrow @(IsOpen ? "open" : "")">
+                    ▶
+                </span>
+
+            </button>
+        }
+
+    </div>
+
+
+    <!-- TITLE -->
+    <h2 class="journey-card-title">@Title</h2>
+
+
+    <!-- TAGS -->
+    <div class="journey-tags">
+        @foreach (var tag in Tags)
+        {
+            <span class="journey-tag">@tag</span>
+        }
+    </div>
+
+
+    <!-- DESCRIPTION -->
+    @if (IsOpen && !string.IsNullOrWhiteSpace(Description))
+    {
+        <div class="journey-description">
+            @Description
+        </div>
+    }
+
+</div>
+
+@code {
+
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string Date { get; set; } = "";
+    [Parameter] public string Status { get; set; } = "";
+    [Parameter] public string Type { get; set; } = "";
+    [Parameter] public string? Score { get; set; } = "";
+    [Parameter] public string? Description { get; set; } = "";
+    [Parameter] public List<string> Tags { get; set; } = new();
+
+    private bool IsOpen = false;
+
+    private void Toggle()
+    {
+        IsOpen = !IsOpen;
+    }
+    
+    private string TypeClass =>
+        Type switch
+        {
+            "Course" => "course",
+            "Project" => "project",
+            _ => "milestone"
+        };
+    
+    // Status names
+    private string StatusClass =>
+        Status switch
+        {
+            "PROJEKT LANSERAT" => "status-success",
+            "KURS AVKLARAD" => "status-success",
+            "VG" => "status-success",
+            "G" => "status-success",
+
+            "Pågående" => "status-progress",
+            
+            "UTBILDNING STARTADE" => "status-active",
+
+            "Planerad" => "status-warning",
+
+            _ => "status-default"
+        };
+}

@@ -1,0 +1,117 @@
+@page "/journey"
+
+
+<div class="journey-container">
+
+    <h1 class="journey-title">Min resa</h1>
+    <p class="journey-subtitle">
+        Utbildning, projekt & milstolpar
+    </p>
+
+    @foreach (var item in JourneyItems)
+    {
+        <JourneyCard 
+            Title="@item.Title"
+            Date="@item.Date"
+            Status="@item.Status"
+            Type="@item.Type"
+            Score="@item.Score"
+            Description="@item.Description"
+            Tags="@item.Tags" />
+    }
+
+</div>
+
+@code {
+
+    /// <summary>
+    /// Types: Course, Project, Milestone
+    /// Status active: PÅGÅENDE, UTBILDNING STARTADE
+    /// status-success: KURS AVKLARAD, PROJEKT LANSERAT
+    /// status-warning: Planerad
+    /// status-default: status-default
+    /// </summary>
+    List<JourneyItem> JourneyItems = new()
+    {
+        new JourneyItem
+        {
+            Title = "OOP Fortsättning",
+            Date = "Jan 2026",
+            Status = "PÅGÅENDE",
+            Type = "Course",
+            Score = "",
+            Description = "",
+            Tags = new() { "C#", ".NET", "SQL", "EF Core" }
+        },
+        
+        new JourneyItem
+        {
+            Title = "Avancerad Programmering",
+            Date = "Dec 2025",
+            Status = "PÅGÅENDE",
+            Type = "Course",
+            Score = "",
+            Description = "",
+            Tags = new() { "C#", ".NET", "SQL", "EF Core" }
+        },
+        
+        new JourneyItem
+        {
+            Title = "Personlig utveckling och färdighetsträning, fortsättning",
+            Date = "Dec 2025",
+            Status = "KURS AVKLARAD",
+            Type = "Course",
+            Score = "VG",
+            Description = "",
+            Tags = new() { "C#", ".NET", "SQL", "EF Core" }
+        },
+        
+        new JourneyItem
+        {
+            Title = "Databasutveckling",
+            Date = "Nov 2025",
+            Status = "KURS AVKLARAD",
+            Type = "Course",
+            Score = "VG",
+            Description = "",
+            Tags = new() { "C#", ".NET", "SQL", "EF Core" }
+        },
+        
+        new JourneyItem
+        {
+            Title = "Personlig utveckling och färdighetsträning, grund",
+            Date = "Sep 2025",
+            Status = "KURS AVKLARAD",
+            Type = "Course",
+            Score = "G",
+            Description = "",
+            Tags = new() { "C#", ".NET", "SQL", "EF Core" }
+        },
+
+        new JourneyItem
+        {
+            Title = "OOP Grund",
+            Date = "Aug 2025",
+            Status = "KURS AVKLARAD",
+            Type = "Course",
+            Score = "VG",
+            Description = "",
+            Tags = new() { "OOP", "C#", ".NET" }
+        },
+        
+        new JourneyItem
+        {
+            Title = "Newton YH-utbildning börjar",
+            Date = "Aug 2025",
+            Status = "UTBILDNING STARTADE",
+            Type = "Milestone",
+            Score = "",
+            Description =
+                "Antagen till Newtons YH-utbildning inom systemutveckling .NET. " +
+                "Ett viktigt steg i min resa mot att bli professionell utvecklare, " +
+                "med fokus på objektorienterad programmering, databaser och moderna " +
+                "utvecklingsmetoder.",
+            Tags = new() { "OOP", "C#", ".NET", "SQL", "EF Core" }
+        }
+    };
+}
