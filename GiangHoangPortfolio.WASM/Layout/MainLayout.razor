@@ -1,18 +1,26 @@
 ﻿@inherits LayoutComponentBase
+@using GiangHoangPortfolio.WASM.Services
+@using GiangHoangPortfolio.WASM.Components
+@inject CounterService CounterService
 
 <MudThemeProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
-<!--TEST-->
+<!-- GDPR cookie consent banner -->
+<CookieConsent />
 
 <MudLayout>
 
     <MudAppBar Color="Color.Transparent" Elevation="0">
 
-        <MudSpacer />
+        <!-- Hamburger: only visible on mobile (CSS-controlled) -->
+        <MudIconButton Class="hamburger-btn" @onclick="ToggleMenu" Color="Color.Inherit">
+            <MudIcon Icon="@(@menuOpen ? Icons.Material.Filled.Close : Icons.Material.Filled.Menu)" />
+        </MudIconButton>
 
-        <div style="display: flex; justify-content: center; flex: 10; gap: 12px;">
+        <!-- Desktop nav links -->
+        <div class="nav-links-desktop">
             <MudButton Href="Home" Color="Color.Inherit">Om mig</MudButton>
             <MudButton Href="journey" Color="Color.Inherit">Min resa</MudButton>
             <MudButton Href="projects" Color="Color.Inherit">Projekt</MudButton>
@@ -25,9 +33,19 @@
 
     </MudAppBar>
 
+    <!-- Mobile nav drawer (slide-down) -->
+    <div class="mobile-nav @(menuOpen ? "mobile-nav--open" : "")">
+        <MudButton Href="Home" Color="Color.Inherit" @onclick="CloseMenu">Om mig</MudButton>
+        <MudButton Href="journey" Color="Color.Inherit" @onclick="CloseMenu">Min resa</MudButton>
+        <MudButton Href="projects" Color="Color.Inherit" @onclick="CloseMenu">Projekt</MudButton>
+        <MudButton Href="youtube" Color="Color.Inherit" @onclick="CloseMenu">Youtube</MudButton>
+        <MudButton Href="cv" Color="Color.Inherit" @onclick="CloseMenu">CV</MudButton>
+        <MudButton Href="underconstruction" Color="Color.Inherit" @onclick="CloseMenu">Kontakt</MudButton>
+    </div>
+
     <div class="hero-layout">
 
-        <!-- Vänstersida: alltid synlig -->
+        <!-- Vänstersida: alltid synlig på desktop, centrerad på mobil -->
         <div class="profile-column">
             <div class="profile-card">
                 <img src="images/IMG_92352.jpg" alt="Giang Hoang" />
@@ -42,3 +60,16 @@
     </div>
 
 </MudLayout>
+
+@code {
+    private bool menuOpen = false;
+
+    private void ToggleMenu() => menuOpen = !menuOpen;
+    private void CloseMenu() => menuOpen = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+        await CounterService.IncrementVisitsAsync();
+    }
+}

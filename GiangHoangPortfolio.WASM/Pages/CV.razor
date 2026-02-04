@@ -1,14 +1,42 @@
 @page "/cv"
+@using GiangHoangPortfolio.WASM.Services
+@inject CounterService CounterService
+@inject IJSRuntime Js
 
-<h3>CV</h3>
+<div class="cv-wrapper">
 
-<iframe 
-    src="images/CV.pdf" 
-    style="width: 100%; height: 85vh; border: none;"
-></iframe>
+    <h3>CV</h3>
 
-<div style="margin-top: 1rem;">
-    <a href="images/CV.pdf" target="_blank" class="mud-button mud-button-filled-primary">
-        Ladda ner CV
-    </a>
+    <iframe
+        src="images/GiangHoangCV.pdf"
+        style="width: 100%; height: 85vh; border: none;"
+    ></iframe>
+
+    <div style="margin-top: 1rem;">
+        <MudButton
+            Variant="Variant.Filled"
+            Color="Color.Primary"
+            StartIcon="Icons.Material.Filled.Download"
+            @onclick="DownloadCv">
+            Ladda ner CV
+        </MudButton>
+    </div>
+
 </div>
+
+@code {
+    private async Task DownloadCv()
+    {
+        await Js.InvokeVoidAsync("eval",
+            @"(function(){
+                var a = document.createElement('a');
+                a.href = 'images/GiangHoangCV.pdf';
+                a.download = 'GiangHoang_CV.pdf';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            })()");
+
+        await CounterService.IncrementCvDownloadsAsync();
+    }
+}
