@@ -12,7 +12,8 @@ body {
 }
 
 .hero {
-    padding: 1rem 0 1.5rem;
+    min-height: 90vh;
+    padding: 2rem 4rem;
     display: flex;
     align-items: flex-start;
 }
@@ -62,10 +63,11 @@ body {
 }
 
 body {
-    max-width: 1500px;
+    max-width: 1500px; /* constrain body width */
+    max-height: 1200px;
     min-height: 100vh;
-    margin: 0 auto;
-    padding: 0 1rem;
+    margin: 0 auto;      /* center page */
+    padding: 0 1rem;     /* page side padding */
     background: #020617 !important;
     color: #e5e7eb;
 }
@@ -210,6 +212,16 @@ body {
 .youtube-embed {
     max-width: 1200px;
     margin: 0 auto;
+    border-radius: 1.5rem;
+    overflow: hidden;
+
+    /* Tydligare ram */
+    border: 2px solid rgba(56, 189, 248, 0.6);
+
+    /* Starkare glow */
+    box-shadow:
+            0 0 60px rgba(56, 189, 248, 0.35),
+            0 0 20px rgba(56, 189, 248, 0.2);
 }
 
 /* ===== TECH STACK NEON CHIPS ===== */
@@ -319,8 +331,8 @@ body {
 
 /* Personligt och tech stack i sin egna container */
 .profile-section {
-    margin-left: 0;
-    margin-top: 2rem;
+    margin-left: 100px;
+    margin-top: -600px;
 }
 
 /* GitHub Aktivitet */
@@ -415,6 +427,7 @@ body {
     border-radius: 24px;
     padding: 16px;
 
+    /* Mer djup + glow */
     border: 1px solid rgba(120, 0, 255, 0.4);
 
     box-shadow:
@@ -424,10 +437,11 @@ body {
 
     color: white;
 
-    max-width: 100%;
-    width: fit-content;
-    margin-left: 0;
-    margin-top: 2rem;
+    max-width: 500px;
+    margin-left: 50px;
+    margin-top: 20px;
+
+    transform: scale(0.8);
 }
 
 
@@ -1006,471 +1020,4 @@ body {
     color: #cbd5e1;
 
     border-left: 2px solid rgba(155, 92, 255, 0.4);
-}
-
-/* ===== PROJECTS WRAPPER ===== */
-
-.projects-wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 1.5rem 0;
-    width: 100%;
-}
-
-/* ===== UNDER CONSTRUCTION PAGE ===== */
-
-.under-construction {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 60vh;
-    padding: 2rem 1rem;
-    gap: 1.5rem;
-}
-
-.under-construction h1 {
-    color: #ffffff;
-    font-size: 2.2rem;
-}
-
-.under-construction p {
-    color: #9ca3af;
-    max-width: 400px;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-/* ============================================================
-   RESPONSIVE NAV — hamburger (mobile) vs inline (desktop)
-   ============================================================ */
-
-/* Desktop: show inline links, hide hamburger */
-.hamburger-btn {
-    display: none;
-}
-
-.nav-links-desktop {
-    display: flex;
-    justify-content: center;
-    flex: 10;
-    gap: 12px;
-}
-
-/* Mobile nav drawer — hidden by default */
-.mobile-nav {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    background: rgba(2, 6, 23, 0.95);
-    padding: 12px 0 16px;
-    border-bottom: 1px solid rgba(56, 189, 248, 0.25);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-}
-
-.mobile-nav--open {
-    max-height: 400px;
-    padding: 12px 0 16px;
-}
-
-/* ============================================================
-   TABLET  (≤ 900 px)
-   ============================================================ */
-@media (max-width: 900px) {
-
-    /* --- hero two-column layout shrinks gap & padding --- */
-    .hero-layout {
-        padding: 4rem 2rem 3rem;
-        gap: 2rem;
-    }
-
-    .hero-content {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    /* --- profile section --- */
-    .profile-grid {
-        gap: 40px;
-    }
-
-    /* --- heatmap: allow horizontal scroll if needed --- */
-    .heatmap-grid-wrapper {
-        overflow-x: auto;
-    }
-
-    /* --- quiz / project title --- */
-    .quiz-title {
-        font-size: 2rem;
-    }
-}
-
-/* ============================================================
-   MOBILE   (≤ 640 px)
-   ============================================================ */
-@media (max-width: 640px) {
-
-    /* --- nav: swap to hamburger --- */
-    .hamburger-btn {
-        display: flex;
-    }
-
-    .nav-links-desktop {
-        display: none;
-    }
-
-    .mobile-nav {
-        display: flex;
-    }
-
-    /* --- hero layout: single column, stacked --- */
-    .hero-layout {
-        grid-template-columns: 1fr;
-        padding: 3rem 1rem 2rem;
-        gap: 1.5rem;
-    }
-
-    .profile-column {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .profile-card img {
-        width: 150px;
-        height: 150px;
-    }
-
-    .hero-content {
-        width: 100%;
-        max-width: 100%;
-        margin-top: 0;
-        margin-left: 0;
-    }
-
-    /* --- hero section (Home page intro) --- */
-    .hero {
-        min-height: auto;
-        padding: 1rem 0;
-    }
-
-    /* --- profile section (Personligt + Tech Stack) --- */
-    .profile-section {
-        margin-left: 0;
-        margin-top: 1.5rem;
-    }
-
-    .profile-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    /* --- github heatmap card --- */
-    .github-heatmap-card {
-        max-width: 100%;
-        overflow-x: auto;
-    }
-
-    .heatmap-grid-wrapper {
-        overflow-x: auto;
-        padding-bottom: 8px;
-    }
-
-    /* --- journey page --- */
-    .journey-container {
-        padding: 2rem 0.75rem;
-    }
-
-    .journey-title {
-        font-size: 1.8rem;
-    }
-
-    .journey-card {
-        padding: 1.2rem 1rem;
-    }
-
-    .journey-card-title {
-        font-size: 1.1rem;
-    }
-
-    /* --- projects page --- */
-    .project-card {
-        padding: 0.75rem !important;
-    }
-
-    .quiz-title {
-        font-size: 1.6rem;
-    }
-
-    /* --- youtube page --- */
-    .youtube-section {
-        padding: 2rem 0.75rem;
-    }
-
-    .youtube-section h1 {
-        font-size: 1.8rem;
-    }
-
-    .youtube-embed iframe {
-        height: 45vw;
-    }
-
-    /* --- CV page --- */
-    .cv-wrapper {
-        padding: 0.5rem;
-    }
-
-    /* --- section generic --- */
-    .section {
-        padding: 2rem 1rem;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    /* --- page container --- */
-    .page-container {
-        padding: 0 0.75rem;
-    }
-
-    /* --- body max-height should not clip on mobile --- */
-    body {
-        max-height: none;
-    }
-}
-
-/* ============================================================
-   VERY SMALL PHONES  (≤ 380 px)
-   ============================================================ */
-@media (max-width: 380px) {
-
-    .profile-card img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .journey-title,
-    .youtube-section h1 {
-        font-size: 1.5rem;
-    }
-
-    .journey-card {
-        padding: 1rem 0.75rem;
-    }
-
-    .journey-tag {
-        padding: 5px 10px;
-        font-size: 0.7rem;
-    }
-
-    .heatmap-cell {
-        width: 10px;
-        height: 10px;
-    }
-
-    .heatmap-content {
-        gap: 12px;
-    }
-
-    .month-column {
-        gap: 5px;
-    }
-}
-
-/* ============================================================
-   QR PAGE
-   ============================================================ */
-
-.qr-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 70vh;
-    padding: 2rem 1rem;
-}
-
-.qr-image {
-    width: 90%;
-    max-width: 420px;
-    border-radius: 20px;
-    box-shadow:
-            0 0 40px rgba(56, 189, 248, 0.3),
-            0 0 80px rgba(139, 92, 246, 0.2);
-}
-
-/* ============================================================
-   COUNTER PAGE
-   ============================================================ */
-
-.counter-page {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 2.5rem 1rem;
-    text-align: center;
-}
-
-.counter-title {
-    font-size: 2.2rem;
-    color: #fff;
-    margin-bottom: 0.4rem;
-}
-
-.counter-subtitle {
-    color: #64748b;
-    margin-bottom: 2.5rem;
-    font-size: 0.95rem;
-}
-
-.counter-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
-}
-
-.counter-card {
-    background: linear-gradient(145deg, #0f0a1f, #1a1033);
-    border: 1px solid rgba(139, 92, 246, 0.35);
-    border-radius: 20px;
-    padding: 2rem 1rem;
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.counter-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 32px rgba(139, 92, 246, 0.4);
-}
-
-.counter-icon {
-    font-size: 2rem;
-    color: #7dd3fc;
-    margin-bottom: 0.8rem;
-}
-
-.counter-value {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #fff;
-    line-height: 1;
-    margin-bottom: 0.6rem;
-    text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
-}
-
-.counter-label {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-}
-
-/* counter grid: stack on mobile */
-@media (max-width: 540px) {
-    .counter-grid {
-        grid-template-columns: 1fr;
-        max-width: 280px;
-        margin: 0 auto;
-    }
-}
-
-/* ============================================================
-   COOKIE CONSENT BANNER
-   ============================================================ */
-
-.cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-
-    background: rgba(10, 12, 25, 0.92);
-    backdrop-filter: blur(12px);
-    border-top: 1px solid rgba(56, 189, 248, 0.3);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-
-    padding: 1rem 1.5rem;
-
-    /* hidden by default */
-    transform: translateY(100%);
-    transition: transform 0.35s ease;
-}
-
-.cookie-banner--visible {
-    transform: translateY(0);
-}
-
-.cookie-banner__text p {
-    margin: 0;
-    color: #cbd5e1;
-    font-size: 0.88rem;
-    line-height: 1.5;
-    max-width: 580px;
-}
-
-.cookie-banner__link {
-    color: #38bdf8;
-    text-decoration: none;
-}
-.cookie-banner__link:hover {
-    text-decoration: underline;
-}
-
-.cookie-banner__actions {
-    display: flex;
-    gap: 0.75rem;
-    flex-shrink: 0;
-}
-
-.cookie-banner__btn {
-    padding: 8px 20px;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    transition: all 0.2s ease;
-}
-
-.cookie-banner__btn--accept {
-    background: linear-gradient(90deg, #38bdf8, #6366f1);
-    color: #fff;
-    box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
-}
-.cookie-banner__btn--accept:hover {
-    box-shadow: 0 0 18px rgba(56, 189, 248, 0.7);
-}
-
-.cookie-banner__btn--decline {
-    background: transparent;
-    color: #94a3b8;
-    border: 1px solid rgba(148, 163, 184, 0.4);
-}
-.cookie-banner__btn--decline:hover {
-    color: #cbd5e1;
-    border-color: rgba(148, 163, 184, 0.7);
-}
-
-/* stack vertically on very small screens */
-@media (max-width: 480px) {
-    .cookie-banner {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 1rem;
-        gap: 1rem;
-    }
-
-    .cookie-banner__actions {
-        justify-content: center;
-    }
 }
