@@ -1,0 +1,55 @@
+@using Microsoft.JSInterop
+
+<div class="cookie-banner @(visible ? "cookie-banner--visible" : "")">
+
+    <div class="cookie-banner__text">
+        <p>
+            Vi använder cookies för att förbättra din upplevelse på denna webbplats.
+            Genom att fortsätta browsing accepterar du vår
+            <a href="#" class="cookie-banner__link">cookiepolicy</a>.
+            Vi samlar inte in personlig information utanför vad som är nödvändigt.
+        </p>
+    </div>
+
+    <div class="cookie-banner__actions">
+        <button class="cookie-banner__btn cookie-banner__btn--accept" @onclick="Accept">
+            Acceptera
+        </button>
+        <button class="cookie-banner__btn cookie-banner__btn--decline" @onclick="Decline">
+            Avvisa
+        </button>
+    </div>
+
+</div>
+
+@code {
+    [Inject] IJSRuntime Js { get; set; } = null!;
+
+    private bool visible = false;
+
+    private const string ConsentKey = "portfolio_cookie_consent";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+
+        string? consent = await Js.InvokeAsync<string?>("localStorage.getItem", ConsentKey);
+        if (consent == null)
+        {
+            visible = true;
+            StateHasChanged();
+        }
+    }
+
+    private async Task Accept()
+    {
+        await Js.InvokeVoidAsync("localStorage.setItem", ConsentKey, "accepted");
+        visible = false;
+    }
+
+    private async Task Decline()
+    {
+        await Js.InvokeVoidAsync("localStorage.setItem", ConsentKey, "declined");
+        visible = false;
+    }
+}

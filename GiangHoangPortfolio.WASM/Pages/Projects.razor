@@ -1,50 +1,50 @@
 @page "/projects"
 
-<MudCard Elevation="6" Class="project-card dark-card">
+<div class="projects-wrapper">
 
-    <MudCardContent>
+    <!-- Quiz Game -->
+    <MudCard Elevation="6" Class="project-card dark-card">
 
-        <MudText Typo="Typo.h4" Class="quiz-title mb-4">
-            🧠 Quiz Game
-        </MudText>
+        <MudCardContent>
 
-        <MudText Typo="Typo.subtitle1" Class="mb-4">
-            Jag har byggt ett helt eget Quiz Game med Blazor WebAssembly och MudBlazor – från idé till färdig, publicerad webapp.
-            Projektet visar min förmåga att bygga interaktiva gränssnitt, hantera logik och deploya moderna .NET-applikationer.
-        </MudText>
+            <MudText Typo="Typo.h4" Class="quiz-title mb-4">
+                Quiz Game
+            </MudText>
 
-        <!-- Embed container -->
-        <div class="embed-container glow-frame">
+            <MudText Typo="Typo.subtitle1" Class="mb-4">
+                Jag har byggt ett helt eget Quiz Game med Blazor WebAssembly och MudBlazor – från idé till färdig, publicerad webapp.
+                Projektet visar min förmåga att bygga interaktiva gränssnitt, hantera logik och deploya moderna .NET-applikationer.
+            </MudText>
 
-            <iframe
-                src="https://findingthecodex.github.io/QuizGame.WASM/"
-                loading="lazy"
-                allowfullscreen>
-            </iframe>
+            <div class="embed-container">
+                <iframe
+                    src="https://findingthecodex.github.io/QuizGame.WASM/"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+            </div>
 
-        </div>
+        </MudCardContent>
 
-    </MudCardContent>
+        <MudCardActions>
+            <MudButton
+                Variant="Variant.Outlined"
+                Color="Color.Primary"
+                Href="https://findingthecodex.github.io/QuizGame.WASM/"
+                Target="_blank">
+                Öppna i ny flik
+            </MudButton>
+        </MudCardActions>
 
-    <MudCardActions>
+    </MudCard>
 
-        <MudButton
-            Variant="Variant.Outlined"
-            Color="Color.Primary"
-            Href="https://findingthecodex.github.io/QuizGame.WASM/"
-            Target="_blank">
-
-            Öppna i ny flik
-        </MudButton>
-
-    </MudCardActions>
-    
+    <!-- Valentine Web App -->
     <MudCard Elevation="6" Class="project-card dark-card mt-6">
 
         <MudCardContent>
 
             <MudText Typo="Typo.h4" Class="quiz-title mb-4">
-                💖 Valentine Web App
+                Valentine Web App
             </MudText>
 
             <MudText Typo="Typo.subtitle1" Class="mb-4">
@@ -52,31 +52,26 @@
                 Projektet visar min förmåga att skapa personliga, kreativa webbappar samt hantera deployment.
             </MudText>
 
-            <div class="embed-container glow-frame">
-
+            <div class="embed-container">
                 <iframe
                     src="https://findingthecodex.github.io/BeMyValentine/"
                     loading="lazy"
                     allowfullscreen>
                 </iframe>
-
             </div>
 
         </MudCardContent>
 
         <MudCardActions>
-
             <MudButton
                 Variant="Variant.Outlined"
                 Color="Color.Secondary"
                 Href="https://findingthecodex.github.io/BeMyValentine/"
                 Target="_blank">
-
                 Öppna i ny flik
             </MudButton>
-
         </MudCardActions>
 
     </MudCard>
 
-</MudCard>
+</div>

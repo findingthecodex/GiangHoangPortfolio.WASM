@@ -1,0 +1,15 @@
+@page "/qr"
+@using GiangHoangPortfolio.WASM.Services
+@inject CounterService CounterService
+
+<div class="qr-page">
+    <img src="images/svg/qr-code.svg" alt="QR Code" class="qr-image" />
+</div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+        await CounterService.IncrementQrScansAsync();
+    }
+}

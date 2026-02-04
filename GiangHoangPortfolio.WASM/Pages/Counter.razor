@@ -1,0 +1,56 @@
+@page "/counter"
+@using GiangHoangPortfolio.WASM.Services
+@inject CounterService CounterService
+
+<div class="counter-page">
+
+    <h1 class="counter-title">Statistik</h1>
+    <p class="counter-subtitle">Sifforna nedan gäller för denna enhet.</p>
+
+    <div class="counter-grid">
+
+        <!-- Besök -->
+        <div class="counter-card">
+            <div class="counter-icon">
+                <MudIcon Icon="Icons.Material.Filled.Language" Color="Color.Inherit" />
+            </div>
+            <div class="counter-value">@visits</div>
+            <div class="counter-label">Besök</div>
+        </div>
+
+        <!-- QR-scanningar -->
+        <div class="counter-card">
+            <div class="counter-icon">
+                <MudIcon Icon="Icons.Material.Filled.QrCode2" Color="Color.Inherit" />
+            </div>
+            <div class="counter-value">@qrScans</div>
+            <div class="counter-label">QR-scanningar</div>
+        </div>
+
+        <!-- CV-nedladdningar -->
+        <div class="counter-card">
+            <div class="counter-icon">
+                <MudIcon Icon="Icons.Material.Filled.Download" Color="Color.Inherit" />
+            </div>
+            <div class="counter-value">@cvDownloads</div>
+            <div class="counter-label">CV-nedladdningar</div>
+        </div>
+
+    </div>
+
+</div>
+
+@code {
+    private int visits;
+    private int qrScans;
+    private int cvDownloads;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+        visits      = await CounterService.GetVisitsAsync();
+        qrScans     = await CounterService.GetQrScansAsync();
+        cvDownloads = await CounterService.GetCvDownloadsAsync();
+        StateHasChanged();
+    }
+}
