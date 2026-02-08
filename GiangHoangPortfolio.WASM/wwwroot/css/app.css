@@ -1474,3 +1474,11 @@ body {
         justify-content: center;
     }
 }
+
+/* Copyright text */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: #888;
+}
