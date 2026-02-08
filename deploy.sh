@@ -16,8 +16,8 @@ cd ..
 rm -rf _framework css _content *.css index.html 404.html favicon.png icon-192.png images sample-data
 
 echo "📦 Copying new files from publish folder..."
-# Use the correct .NET version folder (net10.0)
-cp -r GiangHoangPortfolio.WASM/bin/Release/net10.0/publish/wwwroot/* .
+# Use the correct .NET version folder (net8.0)
+cp -r GiangHoangPortfolio.WASM/bin/Release/net8.0/publish/wwwroot/* .
 
 echo "📄 Creating 404.html from index.html..."
 cp index.html 404.html

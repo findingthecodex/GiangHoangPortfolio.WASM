@@ -1474,3 +1474,43 @@ body {
         justify-content: center;
     }
 }
+
+/* Copyright text */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* Contact page */
+.contact {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.contact-intro {
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.contact-links {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-links li {
+    margin-bottom: 1rem;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: #007acc;
+}
+
+.contact-footer {
+    margin-top: 2.5rem;
+    font-size: 0.9rem;
+    color: #777;
+}
