@@ -16,7 +16,7 @@
 
         <!-- Hamburger: only visible on mobile (CSS-controlled) -->
         <MudIconButton Class="hamburger-btn" @onclick="ToggleMenu" Color="Color.Inherit">
-            <MudIcon Icon="@(@menuOpen ? Icons.Material.Filled.Close : Icons.Material.Filled.Menu)" />
+            <MudIcon Icon="@(_menuOpen ? Icons.Material.Filled.Close : Icons.Material.Filled.Menu)" />
         </MudIconButton>
 
         <!-- Desktop nav links -->
@@ -36,14 +36,14 @@
     </MudAppBar>
 
     <!-- Mobile nav drawer (slide-down) -->
-    <div class="mobile-nav @(menuOpen ? "mobile-nav--open" : "")">
+    <div class="mobile-nav @((_menuOpen ? "mobile-nav--open" : ""))">
         <MudButton Href="Home" Color="Color.Inherit" @onclick="CloseMenu">Om mig</MudButton>
         <MudButton Href="journey" Color="Color.Inherit" @onclick="CloseMenu">Min resa</MudButton>
         <MudButton Href="projects" Color="Color.Inherit" @onclick="CloseMenu">Projekt</MudButton>
         <MudButton Href="youtube" Color="Color.Inherit" @onclick="CloseMenu">Youtube</MudButton>
         <MudButton Href="cv" Color="Color.Inherit" @onclick="CloseMenu">CV</MudButton>
-        <MudButton Href="underconstruction" Color="Color.Inherit" @onclick="CloseMenu">Kontakt</MudButton>
         <MudButton Href="counter" Color="Color.Inherit" @onclick="CloseMenu">Statistik</MudButton>
+        <MudButton Href="contact" Color="Color.Inherit" @onclick="CloseMenu">Kontakt</MudButton>
         <MudButton Href="QR" Color="Color.Inherit" @onclick="CloseMenu">QR</MudButton>
     </div>
 
@@ -71,10 +71,10 @@
 
 
 @code {
-    private bool menuOpen = false;
+    private bool _menuOpen;
 
-    private void ToggleMenu() => menuOpen = !menuOpen;
-    private void CloseMenu() => menuOpen = false;
+    private void ToggleMenu() => _menuOpen = !_menuOpen;
+    private void CloseMenu() => _menuOpen = false;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
