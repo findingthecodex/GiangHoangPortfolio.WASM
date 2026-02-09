@@ -20,16 +20,16 @@
         </MudIconButton>
 
         <!-- Desktop nav links -->
-        <div class="nav-links-desktop">
-            <MudButton Href="Home" Color="Color.Inherit">Om mig</MudButton>
-            <MudButton Href="journey" Color="Color.Inherit">Min resa</MudButton>
-            <MudButton Href="projects" Color="Color.Inherit">Projekt</MudButton>
-            <MudButton Href="youtube" Color="Color.Inherit">Youtube</MudButton>
-            <MudButton Href="cv" Color="Color.Inherit">CV</MudButton>
-            <MudButton Href="counter" Color="Color.Inherit">Statistik</MudButton>
-            <MudButton Href="contact" Color="Color.Inherit">Kontakt</MudButton>
-            <MudButton Href="QR" Color="Color.Inherit">QR</MudButton>
-        </div>
+        @* <div class="nav-links-desktop"> *@
+        @*     <MudButton Href="Home" Color="Color.Inherit">Om mig</MudButton> *@
+        @*     <MudButton Href="journey" Color="Color.Inherit">Min resa</MudButton> *@
+        @*     <MudButton Href="projects" Color="Color.Inherit">Projekt</MudButton> *@
+        @*     <MudButton Href="youtube" Color="Color.Inherit">Youtube</MudButton> *@
+        @*     <MudButton Href="cv" Color="Color.Inherit">CV</MudButton> *@
+        @*     <MudButton Href="counter" Color="Color.Inherit">Statistik</MudButton> *@
+        @*     <MudButton Href="contact" Color="Color.Inherit">Kontakt</MudButton> *@
+        @*     <MudButton Href="QR" Color="Color.Inherit">QR</MudButton> *@
+        @* </div> *@
 
         <MudSpacer />
 
@@ -51,10 +51,24 @@
 
         <!-- Vänstersida: alltid synlig på desktop, centrerad på mobil -->
         <div class="profile-column">
+
             <div class="profile-card">
                 <img src="images/IMG_92352.jpg" alt="Giang Hoang" />
             </div>
+
+            <h2 class="profile-name">Giang Hoang</h2>
+            <p class="profile-title">.NET / Blazor Developer</p>
+
+            <nav class="profile-nav" aria-label="Profilnavigation">
+                <MudButton Href="Home" Variant="Variant.Text">Om mig</MudButton>
+                <MudButton Href="journey" Variant="Variant.Text">Min resa</MudButton>
+                <MudButton Href="projects" Variant="Variant.Text">Projekt</MudButton>
+                <MudButton Href="cv" Variant="Variant.Text">CV</MudButton>
+                <MudButton Href="contact" Variant="Variant.Text">Kontakt</MudButton>
+            </nav>
+
         </div>
+
 
         <!-- Mitten: byts per sida -->
         <div class="hero-content">

@@ -112,9 +112,12 @@ body {
 
 .profile-column {
     width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-top: 0;
 }
+
 
 .hero-content {
     max-width: 1800px;
@@ -1109,6 +1112,19 @@ body {
     }
 }
 
+/*--- profile nav buttons ---*/
+.profile-nav .mud-button {
+    width: 160px;
+    justify-content: left;
+}
+
+.profile-nav .mud-button-label .mud-button:hover {
+    width: 100%;
+    text-align: center;
+    background: rgba(56, 189, 248, 0.12);
+}
+
+
 /* ============================================================
    MOBILE   (≤ 640 px)
    ============================================================ */
@@ -1133,12 +1149,7 @@ body {
         padding: 3rem 1rem 2rem;
         gap: 1.5rem;
     }
-
-    .profile-column {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
+    
 
     .profile-card img {
         width: 150px;
@@ -1514,3 +1525,33 @@ body {
     font-size: 0.9rem;
     color: #777;
 }
+
+/*Profile section (personligt + tech stack)*/
+
+.profile-name {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-top: 1.2rem;
+    margin-bottom: 0.3rem;
+
+    /* Lila accent */
+    color: #e9d5ff;
+    text-shadow:
+            0 0 8px rgba(233, 213, 255, 0.8),
+            0 0 20px rgba(192, 132, 252, 0.6),
+            0 0 40px rgba(168, 85, 247, 0.35);
+
+    letter-spacing: -0.6px;
+}
+
+.profile-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    /* Cyan accent */
+    color: #22d3ee;
+
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+
