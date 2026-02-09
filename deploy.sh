@@ -13,7 +13,7 @@ fi
 
 echo "🧹 Cleaning old files in root..."
 cd ..
-rm -rf _framework css _content *.css *.html *.png images sample-data
+rm -rf _framework _content *.css *.html *.png sample-data
 
 echo "📦 Copying new files from publish folder..."
 cp -r GiangHoangPortfolio.WASM/publish/wwwroot/* .
