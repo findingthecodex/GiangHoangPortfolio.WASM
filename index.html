@@ -14,6 +14,17 @@
     <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X00XE5XEGB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-X00XE5XEGB');
+    </script>
+    
 </head>
 
 <body>
@@ -31,7 +42,30 @@
         <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
-    <script src="_content/MudBlazor/MudBlazor.min.js"></script> 
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    
+<!--    Google Analytics page view tracking for Blazor routing-->
+    <script>
+        window.trackPageView = function (path) {
+            if (window.gtag) {
+                gtag('event', 'page_view', {
+                    page_path: path
+                });
+            }
+        };
+    </script>
+
+    <script>
+        // Detektera QR-scanningar
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('qr') === '1') {
+            gtag('event', 'qr_scan', {
+                event_category: 'engagement',
+                event_label: window.location.pathname
+            });
+        }
+    </script>
+
 </body>
 
 </html>
