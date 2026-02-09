@@ -1143,6 +1143,11 @@ body {
         display: flex;
     }
 
+    /* --- Dölj desktop profile-nav på mobil --- */
+    .profile-nav {
+        display: none !important;
+    }
+
     /* --- hero layout: single column, stacked --- */
     .hero-layout {
         grid-template-columns: 1fr;
