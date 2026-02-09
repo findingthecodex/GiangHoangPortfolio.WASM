@@ -1151,10 +1151,18 @@ body {
     /* --- hero layout: single column, stacked --- */
     .hero-layout {
         grid-template-columns: 1fr;
+        justify-items: center;
         padding: 3rem 1rem 2rem;
         gap: 1.5rem;
     }
-    
+
+    .profile-column {
+        width: 100%;
+        max-width: 320px;
+        align-items: center;
+        text-align: center;
+    }
+
 
     .profile-card img {
         width: 150px;
