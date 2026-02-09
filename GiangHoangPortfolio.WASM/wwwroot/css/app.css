@@ -1591,3 +1591,18 @@ body {
     color: #38bdf8;
     transform: translateY(-2px);
 }
+
+/* QR page*/
+
+.qr-card {
+    text-align: center;
+}
+
+.qr-card {
+    grid-column: span 2;      /* eller 2 beroende på grid */
+    max-width: 420px;
+    margin: 0 auto;           /* centrerar */
+}
+
+
+

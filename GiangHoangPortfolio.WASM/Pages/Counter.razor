@@ -40,17 +40,44 @@
 
 </div>
 
+<div class="counter-card qr-card">
+    <div class="counter-icon">
+        <MudIcon Icon="Icons.Material.Filled.QrCode" Color="Color.Inherit" />
+    </div>
+
+    <img src="images/svg/qr-code.svg"
+         alt="QR Code"
+         class="qr-image"
+         @onclick="OnQrViewed" />
+
+    <div class="counter-label">Skanna QR</div>
+</div>
+
+
 @code {
     private int visits;
     private int qrScans;
     private int cvDownloads;
+    private bool qrCounted = false;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (!firstRender) return;
+
         visits      = await CounterService.GetVisitsAsync();
         qrScans     = await CounterService.GetQrScansAsync();
         cvDownloads = await CounterService.GetCvDownloadsAsync();
+
         StateHasChanged();
     }
+
+    private async Task OnQrViewed()
+    {
+        if (qrCounted) return;
+
+        qrCounted = true;
+        await CounterService.IncrementQrScansAsync();
+        qrScans++;
+    }
 }
+
