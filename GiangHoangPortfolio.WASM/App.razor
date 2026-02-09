@@ -1,4 +1,8 @@
-﻿<MudThemeProvider />
+﻿@inject NavigationManager Nav
+@inject IJSRuntime JS
+
+
+<MudThemeProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
@@ -15,3 +19,16 @@
         </LayoutView>
     </NotFound>
 </Router>
+
+
+@* Spårar sidvisningar i Google Analytics när navigering sker *@
+@code {
+    protected override void OnInitialized()
+    {
+        Nav.LocationChanged += async (_, args) =>
+        {
+            var uri = new Uri(args.Location);
+            await JS.InvokeVoidAsync("trackPageView", uri.PathAndQuery);
+        };
+    }
+}
