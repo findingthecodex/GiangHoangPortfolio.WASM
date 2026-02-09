@@ -1088,6 +1088,7 @@ body {
     /* --- hero two-column layout shrinks gap & padding --- */
     .hero-layout {
         padding: 4rem 2rem 3rem;
+        justify-items: center;
         gap: 2rem;
     }
 
