@@ -6,6 +6,7 @@
 <MudThemeProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
+<MudTooltipProvider /> 
 
 <!-- GDPR cookie consent banner -->
 <CookieConsent />
@@ -40,7 +41,6 @@
         <MudButton Href="Home" Color="Color.Inherit" @onclick="CloseMenu">Om mig</MudButton>
         <MudButton Href="journey" Color="Color.Inherit" @onclick="CloseMenu">Min resa</MudButton>
         <MudButton Href="projects" Color="Color.Inherit" @onclick="CloseMenu">Projekt</MudButton>
-        <MudButton Href="youtube" Color="Color.Inherit" @onclick="CloseMenu">Youtube</MudButton>
         <MudButton Href="cv" Color="Color.Inherit" @onclick="CloseMenu">CV</MudButton>
         <MudButton Href="counter" Color="Color.Inherit" @onclick="CloseMenu">Statistik</MudButton>
         <MudButton Href="contact" Color="Color.Inherit" @onclick="CloseMenu">Kontakt</MudButton>
@@ -58,13 +58,37 @@
 
             <h2 class="profile-name">Giang Hoang</h2>
             <p class="profile-title">.NET / Systemutvecklare</p>
+            
+            @* Social icons *@
+            <div class="social-icons">
+                <MudIconButton Icon="@Icons.Material.Outlined.Email"
+                               Href="@Email" />
 
+                <MudIconButton Icon="@Icons.Custom.Brands.GitHub"
+                               Href="@GitHub"
+                               Target="_blank"
+                               Rel="noopener" />
+
+                <MudIconButton Icon="@Icons.Custom.Brands.LinkedIn"
+                               Href="@LinkedIn"
+                               Target="_blank"
+                               Rel="noopener" />
+
+                <MudIconButton Icon="@Icons.Material.Outlined.PlayCircle"
+                               Href="@YouTube" />
+            </div>
+
+
+            
+            @* Desktop nav links (hidden on mobile, CSS-controlled) *@
             <nav class="profile-nav" aria-label="Profilnavigation">
                 <MudButton Href="Home" Variant="Variant.Text">Om mig</MudButton>
                 <MudButton Href="journey" Variant="Variant.Text">Min resa</MudButton>
                 <MudButton Href="projects" Variant="Variant.Text">Projekt</MudButton>
                 <MudButton Href="cv" Variant="Variant.Text">CV</MudButton>
+                <MudButton Href="counter" Variant="Variant.Text">Statistik</MudButton>
                 <MudButton Href="contact" Variant="Variant.Text">Kontakt</MudButton>
+                <MudButton Href="qr" Variant="Variant.Text">QR</MudButton>
             </nav>
 
         </div>
@@ -95,4 +119,11 @@
         if (!firstRender) return;
         await CounterService.IncrementVisitsAsync();
     }
+    
+        const string GitHub = "https://github.com/findingthecodex";
+        const string LinkedIn = "https://www.linkedin.com/in/giang-hoang-a30730145/";
+        const string YouTube = "youtube";
+        const string Email = "mailto:giang_hoang@hotmail.com";
+    }
+
 }

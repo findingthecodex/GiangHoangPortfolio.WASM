@@ -1114,10 +1114,15 @@ body {
     }
 }
 
+.profile-nav {
+    margin-top: 1rem;
+}
+
 /*--- profile nav buttons ---*/
 .profile-nav .mud-button {
     width: 160px;
     justify-content: left;
+    
 }
 
 .profile-nav .mud-button-label .mud-button:hover {
@@ -1570,3 +1575,19 @@ body {
     text-transform: uppercase;
 }
 
+/* Sociala ikoner under personligt + tech stack*/
+.social-icons {
+    display: flex;
+    gap: 1px;
+    margin-top: 0.5rem;
+}
+
+.social-icons .mud-icon-button {
+    color: #cbd5e1;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-icons .mud-icon-button:hover {
+    color: #38bdf8;
+    transform: translateY(-2px);
+}
