@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "GiangHoangPortfolio.WASM",
   "resources": {
-    "hash": "sha256-mRir1QUWJPyuZ358ChipfREkWEaAYKj8llK/8Go75ZY=",
+    "hash": "sha256-BbQGZqzvoeW+jRdwgjkUIKgLHmANchCe+ADEK7VI1Os=",
     "jsModuleNative": {
       "dotnet.native.8.0.24.c8a47gsmyz.js": "sha256-4g0GzvOXSwZvTLca4PrWJkoeltz+V9IF/hEFDcnVros="
     },
@@ -17,7 +17,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "GiangHoangPortfolio.WASM.wasm": "sha256-NbxLjZ1oG0WP6OTkewX3gGmK0Cecn4r/bRO2GhqpX7w=",
+      "GiangHoangPortfolio.WASM.wasm": "sha256-5SSke+/7fDebBzR0D+Cg6nBCYwqjf4wnnoJZka/7yCU=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-vx3wLleqEfdCEn1nUkLcNPce/qlQ5xNpAfktiCdDcSE=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-4ky/A1eYSt7jhzQ2Zvyqxt7k5WOy0cqQWW5OjgtOnzg=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-F0i6VBOoCCiDt9ZZD2aAFy3AghfWLxyE5NVQ67IJPKE=",
