@@ -35,24 +35,132 @@
     {
         new JourneyItem
         {
-            Title = "OOP Fortsättning",
+            Title = "LIA 2 - Fördjupad yrkespraktik",
+            Date = "Mars 2027",
+            Status = "KOMMANDE",
+            Type = "WorkExperience",
+            Score = "",
+            Description = 
+                "Specialisering i yrkesrollen genom självständigt praktiskt arbete och avancerad " +
+                "problemlösning. Innefattar fördjupad tillämpning av programmeringstekniker i skarpa " +
+                "miljöer samt kritisk reflektion och utvärdering av personlig yrkesutveckling " +
+                "och arbetsprestationer.",
+            Tags = new() { "Advanced Problem Solving", "Software Engineering", "Independent Work", "Professional Evaluation", "Code Quality" }
+        },
+        
+        new JourneyItem
+        {
+            Title = "Examensarbete",
+            Date = "Feb 2027",
+            Status = "KOMMANDE",
+            Type = "Milestone",
+            Score = "",
+            Description = 
+                "Självständigt fördjupningsprojekt inom systemutveckling som omfattar planering, " +
+                "analys och implementation. Innefattar akademiskt skrivande, teknisk dokumentation " +
+                "samt muntlig presentation och kritiskt granskande (opponering) av mjukvarulösningar.",
+            Tags = new() { "Research & Analysis", "Software Architecture", "Technical Writing", "Project Management", "Public Speaking" }
+        },
+        
+        new JourneyItem
+        {
+            Title = "Molntjänster",
             Date = "Jan 2026",
+            Status = "KOMMANDE",
+            Type = "Course",
+            Score = "",
+            Description = 
+                "Utveckling och driftsättning av säkra webbapplikationer i molnmiljö med fokus på Azure. " +
+                "Kursen omfattar implementering av CI/CD-pipelines, automatiserade arbetsflöden samt " +
+                "hantering av molnbaserad lagring, monitorering och efterlevnad av GDPR.",
+            Tags = new() { "Azure", "Cloud Computing", "DevOps", "CI/CD", "Serverless", "Cloud Security" }
+        },
+        
+        new JourneyItem
+        {
+            Title = "LIA 1 - Lärande i arbete",
+            Date = "Sep 2026", // Justera enligt din studieplan
+            Status = "KOMMANDE",
+            Type = "WorkExperience",
+            Score = "",
+            Description = 
+                "Praktisk tillämpning av systemutveckling i en professionell miljö. " +
+                "Fokus på att integrera programmeringskunskaper i företagets verksamhet, " +
+                "förståelse för yrkesrollens samverkan med andra discipliner samt " +
+                "självständig problemlösning i skarpa utvecklingsprojekt.",
+            Tags = new() { "Professional Experience", "Problem Solving", "Workplace Integration", "Agile Workflow", "Software Development" }
+        },
+        
+        new JourneyItem
+        {
+            Title = "Agil systemutveckling och kommunikation",
+            Date = "Aug 2026",
+            Status = "KOMMANDE",
+            Type = "Course",
+            Score = "",
+            Description = 
+                "Praktisk tillämpning av agila metoder och principer i systemutvecklingsprojekt. " +
+                "Fokus på effektiv kravhantering, kompetensöverföring inom teamet samt " +
+                "metoder för att stärka samarbete och leveransförmåga i en föränderlig miljö.",
+            Tags = new() { "Agile Methodology", "Scrum", "Requirements Engineering", "Team Collaboration", "Kanban" }
+        },
+        
+        new JourneyItem
+        {
+            Title = "Gränssnittsutveckling",
+            Date = "Apr 2026",
+            Status = "KOMMANDE", 
+            Type = "Course",
+            Score = "",
+            Description = 
+                "Utveckling av moderna webbapplikationer med fokus på HTML5, CSS3 och JavaScript. " +
+                "Kursen omfattar responsiv design för olika enheter samt praktisk tillämpning av " +
+                "komponentbaserade ramverk som React för att skapa interaktiva och användarvänliga gränssnitt.",
+            Tags = new() { "Frontend", "JavaScript", "React", "HTML5", "CSS3", "Responsive Design" }
+        },
+        
+        new JourneyItem
+        {
+            Title = "Systemtestning",
+            Date = "Mars 2026",
             Status = "PÅGÅENDE",
             Type = "Course",
             Score = "",
-            Description = "",
-            Tags = new() { "C#", ".NET", "SQL", "EF Core" }
+            Description = 
+                "Kurs fokuserad på kvalitetssäkring och testmetodik inom systemutveckling. " +
+                "Innefattar praktisk tillämpning av enhetstester (Unit Testing), " +
+                "identifiering av testresultat samt bedömning av hur väl ett system " +
+                "uppfyller fastställda kravspecifikationer.",
+            Tags = new() { "Unit Testing", "Quality Assurance", "Requirements Validation", "Test Methodology", "Bug Tracking" }
+        },
+        
+        new JourneyItem
+        {
+            Title = "OOP Fortsättning",
+            Date = "Jan 2026",
+            Status = "KURS AVKLARAD",
+            Type = "Course",
+            Score = "Inväntar resultat",
+            Description = 
+                "Fördjupning i systemutveckling med fokus på webbtjänster, molnkommunikation och " +
+                "arkitektur. Innefattar utveckling i ASP.NET Core, asynkron programmering samt " +
+                "implementering av databassäkerhet med Entity Framework Core och Identity.",
+            Tags = new() { "ASP.NET Core", "Entity Framework", "Web Services", "Asynchronous Programming", "Identity" }
         },
         
         new JourneyItem
         {
             Title = "Avancerad Programmering",
             Date = "Dec 2025",
-            Status = "AVKLARAD",
+            Status = "KURS AVKLARAD",
             Type = "Course",
             Score = "VG",
-            Description = "",
-            Tags = new() { "C#", ".NET", "Immutability", "Recursion", "FunctionalProgramming" }
+            Description = 
+                "Avancerad kurs i C# med fokus på det funktionella programmeringsparadigmet. " +
+                "Innefattar implementation av deklarativ kod, rekursion och högre ordningens funktioner. " +
+                "Särskild vikt vid immutabilitet, ren logik separerad från I/O samt användning av " +
+                "modern syntax som pattern matching, records och LINQ för robust mjukvaruarkitektur.",
+            Tags = new() { "Functional Programming", "Recursion", "LINQ", "Immutability", "Declarative Code" }
         },
         
         new JourneyItem
@@ -62,8 +170,11 @@
             Status = "KURS AVKLARAD",
             Type = "Course",
             Score = "VG",
-            Description = "",
-            Tags = new() { "C#", ".NET", "SQL", "EF Core" }
+            Description = 
+                "Vidareutveckling av yrkesrollen med fokus på prestationsförmåga och målfokusering. " +
+                "Innefattar strategisk planering för egen utveckling under LIA samt framtagning av " +
+                "professionella ansökningshandlingar för IT-branschen.",
+            Tags = new() { "Career Dev", "Goal Setting", "LIA Strategy", "Soft Skills" }
         },
         
         new JourneyItem
@@ -73,8 +184,11 @@
             Status = "KURS AVKLARAD",
             Type = "Course",
             Score = "VG",
-            Description = "",
-            Tags = new() { "C#", ".NET", "SQL", "EF Core" }
+            Description = 
+                "Design och implementering av relationella databaser med fokus på SQL Server och EF Core. " +
+                "Innefattar praktisk träning i datamodellering, normalisering och prestandaoptimering " +
+                "för att skapa skalbara och säkra datastrukturer i moderna applikationer.",
+            Tags = new() { "SQL Server", "EF Core", "T-SQL", "Data Modeling", "Normalization" }
         },
         
         new JourneyItem
@@ -84,8 +198,11 @@
             Status = "KURS AVKLARAD",
             Type = "Course",
             Score = "G",
-            Description = "",
-            Tags = new() { "C#", ".NET", "SQL", "EF Core" }
+            Description = 
+                "Introduktion till yrkesrollen som systemutvecklare med fokus på gruppdynamik och samarbete. " +
+                "Innefattar teoretisk och praktisk träning i FIRO-modellen, omdömesförmåga samt metoder för " +
+                "effektiv planering och prioritering inför kommande LIA-perioder.",
+            Tags = new() { "Team Dynamics", "FIRO Model", "Planning", "Professional Role" }
         },
 
         new JourneyItem
@@ -95,8 +212,11 @@
             Status = "KURS AVKLARAD",
             Type = "Course",
             Score = "VG",
-            Description = "",
-            Tags = new() { "OOP", "C#", ".NET" }
+            Description = 
+                "Grundläggande utbildning i objektorienterad programmering med C#. " +
+                "Fokus på centrala koncept som klasser, arv, polymorfism och inkapsling " +
+                "för att skapa strukturerad, återanvändbar och logisk programkod.",
+            Tags = new() { "C#", "OOP", "Encapsulation", "Inheritance", "Polymorphism" }
         },
         
         new JourneyItem
@@ -111,7 +231,7 @@
                 "Ett viktigt steg i min resa mot att bli professionell utvecklare, " +
                 "med fokus på objektorienterad programmering, databaser och moderna " +
                 "utvecklingsmetoder.",
-            Tags = new() { "OOP", "C#", ".NET", "SQL", "EF Core" }
+            Tags = new() { "System Development", ".NET Stack", "C#", "Modern Dev" }
         }
     };
 }
